@@ -21,6 +21,11 @@ This package is roughly divided into 3 parts.
 
 --------------------------------------------------------------------------------
 
+This project is currently undergoing some code restructuring to make it easier
+to use.
+
+--------------------------------------------------------------------------------
+
 1: Generating Sequences.
 
 Multiple sequences can be randomly generated using ```make_sequences.py```
