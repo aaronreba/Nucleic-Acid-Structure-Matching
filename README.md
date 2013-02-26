@@ -40,12 +40,13 @@ be saved to the file "sequences.txt" and would be written with the nucleotide U
 instead of T.
 
 Inside of sequences.txt would look something like this:
+```
 > sequence_1
 AGCUUAGCGUACGUA...AGGAUCGUACGUACU
 > sequence_2
 ACGUACGUAUCUACG...AGCUAGUCGUACUAG
 ...
-
+```
 In this format, the file could be read in using Vienna's packages.
 Using FoldSequences.py, the file could also be read in and its sequences folded
 using Kinfold.
@@ -56,7 +57,9 @@ using Kinfold.
 
 Sequences can be folded using FoldSequences.py. FoldSequences.py requires a call
 to Kinfold. An example is like so:
+```
 python FoldSequences.py "Kinfold --time=10 --num=100 --seed=0=1=2 --stop --lmin < sequences.txt" 500 0 final folded_sequences.txt
+```
 This will call Kinfold on the file "sequences.txt" and fold the sequences
 contained in the file. Kinfold has its own set of parameters and a few of them
 must be set for FoldSequences.py to work.
@@ -95,7 +98,7 @@ HighestTestSequences.txt
 Folded sequences can be scored using ScoreRNA.py. ScoreRNA.py requires an
 executable named ScoreRNA which can be compiled from ScoreRNA.cpp. It's probably
 best to compile using this line:
-g++ -o ScoreRNA ScoreRNA.cpp
+```g++ -o ScoreRNA ScoreRNA.cpp```
 
 Given a folded sequence file and a target structure, ScoreRNA.py will give
 a higher score to sequences with fold patterns that better match the target
@@ -103,26 +106,28 @@ structure.
 
 An example target structure:
 In structure_1.txt:
+```
 > structure_1
 <<N<<NNNNNN>NN[3]NNN>NNN>>
-
+```
 The < and > represent folds from a folding pattern like Vienna's or Kinfold's (
 or ). The N represents any nucleotide. The [3] represents a variable length
 insertion of 0 to 3 nucleotides. With this structure, the following 3 structures
 are generated and scored with sequences that have been specified:
+```
 <<N<<NNNNNN>NNNNNNNN>NNN>>
 <<N<<NNNNNN>NNNNNNN>NNN>>
 <<N<<NNNNNN>NNNNNN>NNN>>
 <<N<<NNNNNN>NNNNN>NNN>>
-
+```
 Multiple structures can be specified in a target file.
 
 Each position of each representation of the target is aligned with each sequence
 and each of the sequence's fold patterns.
-If a sequence was: AGUCAGUCAGUGACUGACUGAUCGUACGACGUACGUAA
-and its fold pattern was: ((((.......((((....))))...........))))
+If a sequence was: ```AGUCAGUCAGUGACUGACUGAUCGUACGACGUACGUAA```
+and its fold pattern was: ```((((.......((((....))))...........))))```
 then each structure would be aligned and scored like so:
-
+```
 ((((.......((((....))))...........))))
 <<N<<NNNNNN>NNNNNNNN>NNN>>
  <<N<<NNNNNN>NNNNNNNN>NNN>>
@@ -152,11 +157,11 @@ then each structure would be aligned and scored like so:
              <<N<<NNNNNN>NNNNN>NNN>>
               <<N<<NNNNNN>NNNNN>NNN>>
                <<N<<NNNNNN>NNNNN>NNN>>
-
+```
 For each set of < and > that align with a corresponding set of ( and )
 accounting for depth of the fold, that alignment would receive 1 point.
-If a fold was: ((((.......((((....))))...........))))
-and a target: <<..<...><<<......>>.>>>
+If a fold was: ```((((.......((((....))))...........))))```
+and a target: ```<<..<...><<<......>>.>>>```
 This alignment would receive 2 points.
 
 An example call of ScoreRNA.py is like so:
@@ -167,12 +172,13 @@ folded_sequences.txt would be a file generated from FoldSequences.py
 do in FoldSequences.py.
 scored_sequences.txt would be the scored file.
 It would look like so:
+```
 > 2s1m_0 scored with the template sequence bulge
 score: 10
 UGGCCGGGAUCAGCCAUCGCCGCGUGUUGGGCGGUCGACGCCCUAAAGAUACGUAUGCUGCUUCGAGUGUUGGCCUAGAGUGGGGCUCUAGCGUUGCGAA
 ((((.((......))...))))(((((((((((.....)))))....))))))..(((.(((......(..(((((......))))).))))...)))..
                   <<<<<N<<<<<NNNNN>>>>>NNNNN>>>>>
-
+```
 --------------------------------------------------------------------------------
 
 There are multiple optional parameters for ScoreRNA.py.
@@ -226,10 +232,13 @@ MakeMutationNeighborhood.py and MakeMutationNeighbors.py:
 These allow creating all of the n-step mutation neighbors of all of the
 sequences in a given file. For example, if there was a file like so:
 In sequences.txt:
+```
 > sequence_1
 CA...
+```
 Then a new file could be created with the 1 step mutation neighbors which would
 be like so:
+```
 > sequence_1_0
 CA...
 > sequence_1_1
@@ -244,7 +253,7 @@ CU...
 CG...
 > sequence_1_6
 CC...
-
+```
 Multiple sequences can be included in an initial sequence file. When making
 mutation neighbors, each sequence is checked as it is created to make sure that
 there are no identical sequences.
@@ -294,11 +303,13 @@ and the second parameter is the base name for the files that will be created.
 A note on base file names:
 If the base name was _sequence_trajectory.txt, and there were 5 trajectories
 in the sequence file, the following 5 files would be created:
+```
 0_sequence_trajectory.txt
 1_sequence_trajectory.txt
 2_sequence_trajectory.txt
 3_sequence_trajectory.txt
 4_sequence_trajectory.txt
+```
 
 --------------------------------------------------------------------------------
 
