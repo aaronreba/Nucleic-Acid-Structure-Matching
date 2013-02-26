@@ -1,5 +1,4 @@
 Author: Aaron Reba
-Email: aaronreba@gmail.com
 
 Hello!
 
@@ -24,26 +23,23 @@ This package is roughly divided into 3 parts.
 
 1: Generating Sequences.
 
-Multiple sequences can be randomly generated using MakeG.py.
-It can be called like so:
-
-python MakeSequences.py $1 $2 $3 $4
-$1: Number of sequences to create
-$2: Length of each sequence
-$3: File to write sequences to
-$4: Nucleic acid type (dna or rna)
+Multiple sequences can be randomly generated using ```make_sequences.py```
 
 For example:
-python MakeSequences.py 500 200 sequences.txt rna
-This would create 500 sequences each 200 bases in length. These sequences would
-be saved to the file "sequences.txt" and would be written with the nucleotide U
+
+```
+python make_sequences.py -n 5 -l 50 -a r
+```
+
+This would create 5 sequences each 50 bases in length. These sequences would
+be printed to the console and would be written with the nucleotide U
 instead of T.
 
-Inside of sequences.txt would look something like this:
+The output would look something like this:
 ```
-> sequence_1
+> Sequence_1
 AGCUUAGCGUACGUA...AGGAUCGUACGUACU
-> sequence_2
+> Sequence_2
 ACGUACGUAUCUACG...AGCUAGUCGUACUAG
 ...
 ```
