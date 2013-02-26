@@ -177,7 +177,7 @@ It would look like so:
 score: 10
 UGGCCGGGAUCAGCCAUCGCCGCGUGUUGGGCGGUCGACGCCCUAAAGAUACGUAUGCUGCUUCGAGUGUUGGCCUAGAGUGGGGCUCUAGCGUUGCGAA
 ((((.((......))...))))(((((((((((.....)))))....))))))..(((.(((......(..(((((......))))).))))...)))..
-                  <<<<<N<<<<<NNNNN>>>>>NNNNN>>>>>
+                      <<<<<N<<<<<NNNNN>>>>>NNNNN>>>>>
 ```
 --------------------------------------------------------------------------------
 
