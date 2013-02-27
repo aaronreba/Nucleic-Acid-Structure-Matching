@@ -14,9 +14,9 @@ This requires:
 * The matplotlib module for Python if you are planning to make graphs using the included scripts.
 
 This package is roughly divided into 3 parts.
-1. Generating Sequences.
-2. Folding Sequences.
-3. Scoring Sequences.
+* Generating Sequences.
+* Folding Sequences.
+* Scoring Sequences.
 
 --------------------------------------------------------------------------------
 
