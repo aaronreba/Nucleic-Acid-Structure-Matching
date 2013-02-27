@@ -7,17 +7,16 @@ a library included in the Vienna package, and match them to a specified
 structure.
 
 This requires:
--A Unix system.
--Kinfold 1.3 (untested with any other Kinfold version)
--A C++ Compiler
--Python 2.7
--The matplotlib module for Python if you are planning to make graphs using the
-included scripts.
+* A Unix system.
+* Kinfold 1.3 (untested with any other Kinfold version)
+* A C++ Compiler
+* Python 2.7
+* The matplotlib module for Python if you are planning to make graphs using the included scripts.
 
 This package is roughly divided into 3 parts.
-1: Generating Sequences.
-2: Folding Sequences.
-3: Scoring Sequences.
+1. Generating Sequences.
+2. Folding Sequences.
+3. Scoring Sequences.
 
 --------------------------------------------------------------------------------
 
