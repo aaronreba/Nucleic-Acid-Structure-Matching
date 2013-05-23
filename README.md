@@ -2,6 +2,13 @@ Author: Aaron Reba
 
 Hello!
 
+--------------------------------------------------------------------------------
+
+This project is currently undergoing some heavy code restructuring to make it
+easier to use.
+
+--------------------------------------------------------------------------------
+
 This is a set of scripts that can be used to obtain fold patterns from Kinfold,
 a library included in the Vienna package, and match them to a specified
 structure.
@@ -17,11 +24,6 @@ This package is roughly divided into 3 parts.
 * Generating Sequences.
 * Folding Sequences.
 * Scoring Sequences.
-
---------------------------------------------------------------------------------
-
-This project is currently undergoing some code restructuring to make it easier
-to use.
 
 --------------------------------------------------------------------------------
 
