@@ -8,7 +8,6 @@ import sys
 import argparse
 
 def main(argv=None):
-    
     parser = argparse.ArgumentParser()
     
     parser.add_argument('-n',
@@ -35,10 +34,10 @@ def main(argv=None):
                         default='Sequence',
                         help='Prefixed title of sequences')
     
-    parser.add_argument('-f',
-                        '--file',
+    parser.add_argument('-o',
+                        '--outfile',
                         action='store',
-                        dest='save_file_name',
+                        dest='out_file_name',
                         default='',
                         type=str,
                         help='File in which to save sequences')
@@ -48,7 +47,7 @@ def main(argv=None):
                         action='store',
                         dest='acid_type',
                         type=str,
-                        choices='rd',
+                        choices=['rna', 'dna'],
                         required=True,
                         help='Specify RNA or DNA sequences')
     
@@ -57,20 +56,18 @@ def main(argv=None):
     number_of_sequences = args.number_of_sequences
     length = args.length
     sequence_title = args.sequence_title
-    save_file_name = args.save_file_name
+    out_file_name = args.out_file_name
     acid_type = args.acid_type
     
-    if save_file_name == '':
-        write_to_file = False
+    if out_file_name == '':
+        out_file = sys.stdout
     else:
-        write_to_file = True
-        save_file = open(save_file_name, 'w')
+        out_file = open(out_file_name, 'w')
     
-    if acid_type == 'r':
+    if acid_type == 'rna':
         bases = ('U', 'A', 'G', 'C')
-    elif acid_type == 'd':
+    elif acid_type == 'dna':
         bases = ('T', 'A', 'G', 'C')
-    
     
     for i in xrange(number_of_sequences):
         write_title = '> {0}_{1}\n'.format(sequence_title, i)
@@ -81,15 +78,10 @@ def main(argv=None):
             write_sequence += bases[new_base]
         write_sequence += '\n'
         
-        if write_to_file:
-            save_file.write(write_title)
-            save_file.write(write_sequence)
-        else:
-            print write_title[:-1]
-            print write_sequence[:-1]
+        out_file.write(write_title)
+        out_file.write(write_sequence)
     
-    if write_to_file:
-        save_file.close()
+    out_file.close()
 
 if __name__ == "__main__":
     main(sys.argv[1:])

@@ -34,7 +34,7 @@ Multiple sequences can be randomly generated using ```make_sequences.py```
 For example:
 
 ```
-python make_sequences.py -n 5 -l 50 -a r
+python make_sequences.py -n 5 -l 50 -a rna
 ```
 
 This would create 5 sequences each 50 bases in length. These sequences would
@@ -230,8 +230,8 @@ There are several .py files that have various functions.
 
 --------------------------------------------------------------------------------
 
-MakeMutationNeighborhood.py and MakeMutationNeighbors.py:
-These allow creating all of the n-step mutation neighbors of all of the
+make_mutation_neighbors.py:
+This allows creating all of the n-step mutation neighbors of all of the
 sequences in a given file. For example, if there was a file like so:
 In sequences.txt:
 ```
@@ -263,17 +263,14 @@ there are no identical sequences.
 MakeMutationNeighbors.py will create only the 1 step mutation neighbors.
 MakeMutationNeighborhood.py allows you to specify the number mutation neighbors.
 
-Call MakeMutationNeighbors.py like so:
-python MakeMutationNeighbors.py sequences.txt mutation_neighbors.txt
-Where the first parameter is your sequence file,
-and the second parameter is the file you want to save your mutation neighbors
-as.
+Call make_mutation_neighbors.py like so:
 
-Call MakeMutationNeighborhood.py like so:
-python MakeMutationNeighbors.py sequences.txt n mutation_neighbors.txt
-Where the first parameter is your sequence file,
-the second parameter is an integer for the number of mutation neighbors,
-and the third parameter is the file you want to save your mutation neighbors as.
+```
+python make_mutation_neighbors.py -i in_file_name.txt -d 2 -a rna
+```
+
+This would assume the sequences in in_file_name.txt are RNA sequences and
+generate the 1 and 2 step mutation neighbors of the given sequences.
 
 --------------------------------------------------------------------------------
 
