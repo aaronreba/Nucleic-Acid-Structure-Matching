@@ -35,7 +35,7 @@ def main(argv=None):
                         help='Prefixed title of sequences')
     
     parser.add_argument('-o',
-                        '--outfile',
+                        '--out-file',
                         action='store',
                         dest='out_file_name',
                         default='',

@@ -16,7 +16,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser()
     
     parser.add_argument('-i',
-                        '--infile',
+                        '--in-file',
                         action='store',
                         dest='in_file_name',
                         type=str,
@@ -24,7 +24,7 @@ def main(argv=None):
                         help='File from which to load parent sequence(s)')
     
     parser.add_argument('-o',
-                        '--outfile',
+                        '--out-file',
                         action='store',
                         dest='out_file_name',
                         default='',
