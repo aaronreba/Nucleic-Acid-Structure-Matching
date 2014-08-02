@@ -1,13 +1,7 @@
 #!/usr/bin/env python
 
-#Given a sequence of RNA, this will find all 1 mutation neighbors of that
+#Given a sequence of RNA, this will find d mutation neighbors of that
 #sequence.
-
-#If you want the 2 mutation neighbors of a sequence, run this program twice or
-#use MakeMutationNeighborhood.py
-#The second time, the input file would be the output file from the first run.
-#The sequence file and the save file must be different! You cannot use the same
-#file as both parameters!
 
 import sys
 import argparse
